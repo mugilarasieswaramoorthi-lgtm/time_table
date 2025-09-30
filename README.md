@@ -24,6 +24,23 @@ Execute the program using runserver command.
 
 # PROGRAM
 ```
+views.py
+from django.shortcuts import render
+from django.http import HttpResponse
+def file1(request):
+    return render(request,'time.html')
+
+
+urls.py
+from django.contrib import admin
+from django.urls import path
+from monaapp.views import file1
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',file1),
+]
+
+
 <html>
     <head>
         <title>
@@ -31,12 +48,14 @@ Execute the program using runserver command.
         </title>
     </head>
     <body>
-        <img src="c:\Users\acer\Downloads\saveetha-engineering-college-(sriperumbudur)-chennai.png "width="50%">
-        <table border="1px" cellpadding="20px" cellspacing="3px" align="center" bgcolor="pink"
-           <caption><b><i>SLOT TIME TABLE-MUGILARASI E (25017644) </i> </b> </capyion>
-           <tr bgcolor="baby pink">
-               <th>DAY </th>
-               <th>8-10</th>
+        {% load static %}
+
+        <img src="{% static 'saveetha-engineering-college-(sriperumbudur)-chennai.png' %}" style="display:block; margin-left:auto; margin-right:auto; width=50%; height:auto;">
+        <table border="1px" cellpadding="20px" cellspacing="3px" align="center" bgcolor="pink">
+           <caption><b><i><centre>SLOT TIME TABLE-MUGILARASI E (25017644)</centre></i></b></caption>
+           <tr bgcolor=" baby pink">
+               <th>DAY</th>
+               <th>8-10</th> 
                <th>10-12</th>
                <th rowspan= "7" bgcolor="pink">LUNCH</th>
                <th>1-3</th>
@@ -109,7 +128,8 @@ Execute the program using runserver command.
 </html>
 ```
 # OUTPUT
-![alt text](<Screenshot 2025-09-26 141133.png>)
+<img width="1909" height="961" alt="Screenshot 2025-09-30 091232" src="https://github.com/user-attachments/assets/e2cc0927-ea05-4e2d-8b43-50cc89bc9fc5" />
+
 
 
 # RESULT
